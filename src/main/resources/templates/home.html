@@ -23,6 +23,10 @@
         <label> Email : <input type="text" name="email"/> </label>
         <input type="submit" value="Send"/>
     </div>
+    <p th:text="#{message}"></p>
+    <div th:if="${param.submit}">
+        You have uploaded.
+    </div>
 </form>
 
 <div class="header">
