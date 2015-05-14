@@ -18,6 +18,7 @@ public class CustomerDataController {
     @ResponseBody
     String handleFileUpload(@RequestParam("myFile") MultipartFile file, @RequestParam("email") String email) {
         System.out.println(email);
+
         if (!file.isEmpty()) {
             String name = file.getName();
             try {
