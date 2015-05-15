@@ -1,65 +1,30 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
-
-    <link rel="stylesheet" type="text/css" media="all"
-          href="css/style.css" th:href="@{/css/style.css}" />
-
-    <link rel="stylesheet" href="@{/resources/css/bootstrap.css}" type="text/css" media="all" />
-    <script src="js/jquery.min.js"></script>
-    <script type="text/javascript" src="js/move-top.js"></script>
-    <script type="text/javascript" src="js/easing.js"></script>
-
-
-    <title>Safe Safe</title>
+    <title>Start Page</title>
+    <link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.1/css/bootstrap.min.css"
+          th:href="@{/webjars/bootstrap/3.3.1/css/bootstrap.min.css}" rel="stylesheet" media="screen"/>
+    <link href="../css/app.css" th:href="@{/css/app.css}" rel="stylesheet" media="screen"/>
+    <script src="webjars/jquery/2.0.3/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('p').animate({
+                fontSize: '48px'
+            }, "slow");
+        });
+    </script>
 </head>
 <body>
 <h1>Welcome!</h1>
 
 <p>Click <a th:href="@{/hello}">here</a> to enter SafeSafe.</p>
-<form action="upload" th:action="@{/customerFile}" method="post" enctype="multipart/form-data">
+<form action="upload" th:action="@{/addFile}" method="post" enctype="multipart/form-data">
     <input type="file" name="myFile"/>
     <div align="center">
         <label> Email : <input type="text" name="email"/> </label>
+        <label th:text="${name}"></label>
         <input type="submit" value="Send"/>
     </div>
-    <p th:text="#{message}"></p>
-    <div th:if="${param.submit}">
-        You have uploaded.
-    </div>
 </form>
-
-<div class="header">
-    <div class="higher">
-        <div class="container">
-            <div class="header-info">
-                <div class="logo">
-                    <h1><a href="#"><span>SAFE</span>SAFE</a></h1>
-                </div>
-                <div class="header-right">
-                    <div class="navigation">
-                        <span class="menu"> </span>
-                        <ul>
-
-
-                        </ul>
-                        <div class="clearfix"> </div>
-                    </div>
-
-                </div>
-                <div class="clearfix"> </div>
-            </div>
-        </div>
-    </div>
-    <div id="HOME" class="header-down">
-        <div class="container">
-            <div class=" col-md-4 vivamus">
-                FILE
-                <a href="#" class="btn1 btn-1 btn1-1b">INSERT</a>
-            </div>
-
-        </div>
-    </div>
-</div>
 </body>
 </html>
