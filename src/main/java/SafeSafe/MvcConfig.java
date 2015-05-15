@@ -18,5 +18,11 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
             registry.addViewController("/hello").setViewName("hello");
             registry.addViewController("/login").setViewName("login");
         }
+    /*@Override
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+
+        registry.addResourceHandler("/resources*//**").addResourceLocations("/resources/");
+
+    }*/
 
     }
