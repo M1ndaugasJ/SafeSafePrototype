@@ -5,21 +5,18 @@
     <link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.1/css/bootstrap.min.css"
           th:href="@{/webjars/bootstrap/3.3.1/css/bootstrap.min.css}" rel="stylesheet" media="screen"/>
     <link href="../css/app.css" th:href="@{/css/app.css}" rel="stylesheet" media="screen"/>
-    <script src="webjars/jquery/2.0.3/jquery.min.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $('p').animate({
-                fontSize: '48px'
-            }, "slow");
-        });
-    </script>
+
+    <link type="text/css" href="css/bootstrap.min.css" rel="stylesheet" />
+    <link type="text/css" href="css/index.css" rel="stylesheet" />
 </head>
 <body>
 <h1>Welcome!</h1>
 
 <p>Click <a th:href="@{/hello}">here</a> to enter SafeSafe.</p>
+
 <form action="upload" th:action="@{/addFile}" method="post" enctype="multipart/form-data">
     <input type="file" name="myFile"/>
+
     <div align="center">
         <label> Email : <input type="text" name="email"/> </label>
         <label th:text="${name}"></label>
